@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Port Bell Medical Center – Premium Healthcare in Kianyaga, Kirinyaga</title>
+  <meta name="description" content="Port Bell Medical Center provides comprehensive, premium healthcare in Kianyaga, Kirinyaga County, Kenya — clinical consultations, diagnostics, emergency response, and inpatient/outpatient care. Book an appointment today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* ── PORT BELL MEDICAL CENTER BRAND PALETTE ── */
+      --blue-dark:   #003366;   /* Primary deep corporate blue */
+      --blue-mid:    #00254d;   /* Darker navy for depth layers */
+      --blue-hover:  #004080;   /* Hover/active state blue */
+      --teal:        #00a896;   /* Vibrant medical teal – primary accent */
+      --teal-dark:   #007d6f;   /* Teal hover states */
+      --teal-light:  #e6f7f5;   /* Very pale teal tints */
+      --sky:         #e6f0fa;   /* Pure sky light blue – panel backgrounds */
+      --sky-mid:     #cce0f5;   /* Slightly deeper sky for borders */
+      --white:       #ffffff;
+      --off-white:   #f4f8fc;   /* Slight blue tint off-white */
+      --text-dark:   #001a33;   /* Deep navy text */
+      --text-mid:    #1a4068;   /* Mid-blue text */
+      --text-muted:  #6685a3;   /* Muted blue-grey */
+      --border:      #c5d9ee;   /* Light blue border */
+      --gold:        #c8923a;   /* Retain for emergency badges */
+      --gold-light:  #fff8ed;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'DM Sans', sans-serif;
+      --radius: 4px;
+      --radius-lg: 12px;
+      --shadow: 0 2px 16px rgba(0,51,102,0.09);
+      --shadow-lg: 0 8px 40px rgba(0,51,102,0.16);
+      --sidebar-w: 480px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-dark);
+      background: var(--off-white);
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 300;
+      background: rgba(0,51,102,0.97);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      border-bottom: 1px solid rgba(0,168,150,0.2);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 36px; height: 36px;
+      background: var(--teal);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .nav-logo-icon svg { width: 20px; height: 20px; }
+
+    .nav-logo-text {
+      font-family: var(--font-serif);
+      font-size: 17px; font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-logo-text span { color: var(--teal); }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 28px; list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 14px; font-weight: 400;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    /* Sidebar trigger links in nav — pill style with icon */
+    .nav-sidebar-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,168,150,0.12);
+      border: 1px solid rgba(0,168,150,0.3);
+      color: var(--teal) !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      padding: 6px 13px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s !important;
+    }
+
+    .nav-sidebar-trigger:hover {
+      background: rgba(0,168,150,0.22) !important;
+      border-color: rgba(0,168,150,0.6) !important;
+      color: var(--teal) !important;
+    }
+
+    .nav-sidebar-trigger svg {
+      width: 14px; height: 14px;
+      stroke: var(--teal); fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    .nav-cta {
+      background: var(--teal) !important;
+      color: var(--white) !important;
+      font-weight: 500 !important;
+      padding: 8px 20px;
+      border-radius: 100px;
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+
+    .hamburger span {
+      width: 24px; height: 2px;
+      background: white; border-radius: 2px; transition: all 0.3s;
+    }
+
+    /* ── MOBILE NAV ── */
+    .mobile-nav {
+      display: none; position: fixed;
+      top: 68px; left: 0; right: 0;
+      background: var(--blue-dark);
+      padding: 16px 5%;
+      z-index: 299;
+      border-bottom: 1px solid rgba(0,168,150,0.2);
+      flex-direction: column; gap: 0;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 15px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .mobile-nav a svg {
+      width: 15px; height: 15px;
+      stroke: var(--teal); fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .mobile-nav .mob-feature-link {
+      color: var(--teal);
+    }
+
+    /* ══════════════════════════════════════════
+       OVERLAY
+    ══════════════════════════════════════════ */
+    .sidebar-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0, 20, 50, 0.55);
+      backdrop-filter: blur(3px);
+      z-index: 400;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .sidebar-overlay.active {
+      opacity: 1; pointer-events: all;
+    }
+
+    /* ══════════════════════════════════════════
+       SIDEBAR BASE STYLES (shared)
+    ══════════════════════════════════════════ */
+    .sidebar {
+      position: fixed;
+      top: 0; right: 0; bottom: 0;
+      width: var(--sidebar-w);
+      max-width: 100vw;
+      z-index: 500;
+      background: var(--white);
+      box-shadow: -8px 0 48px rgba(0,51,102,0.2);
+      transform: translateX(100%);
+      transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
+      display: flex; flex-direction: column;
+      overflow: hidden;
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    /* Sidebar header bar */
+    .sidebar-header {
+      background: var(--blue-dark);
+      padding: 0 24px;
+      height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(0,168,150,0.2);
+    }
+
+    .sidebar-header-left {
+      display: flex; align-items: center; gap: 12px;
+    }
+
+    .sidebar-header-icon {
+      width: 36px; height: 36px;
+      background: rgba(0,168,150,0.15);
+      border: 1px solid rgba(0,168,150,0.3);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .sidebar-header-icon svg {
+      width: 18px; height: 18px;
+      stroke: var(--teal); fill: none;
+      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    .sidebar-header-title {
+      font-family: var(--font-serif);
+      font-size: 20px; font-weight: 600;
+      color: var(--white);
+    }
+
+    .sidebar-header-subtitle {
+      font-size: 12px; color: rgba(255,255,255,0.45);
+    }
+
+    .sidebar-close-btn {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .sidebar-close-btn:hover { background: rgba(255,255,255,0.16); }
+
+    .sidebar-close-btn svg {
+      width: 16px; height: 16px;
+      stroke: rgba(255,255,255,0.8); fill: none;
+      stroke-width: 2; stroke-linecap: round;
+    }
+
+    /* Scrollable body */
+    .sidebar-body {
+      flex: 1; overflow-y: auto;
+      padding: 28px 24px;
+      /* Custom scrollbar */
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+
+    .sidebar-body::-webkit-scrollbar { width: 5px; }
+    .sidebar-body::-webkit-scrollbar-track { background: transparent; }
+    .sidebar-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+    /* ══════════════════════════════════════════
+       BMI SIDEBAR CONTENT
+    ══════════════════════════════════════════ */
+    .bmi-intro {
+      font-size: 14px; color: var(--text-muted); line-height: 1.7;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bmi-input-group { margin-bottom: 18px; }
+
+    .bmi-input-group label {
+      display: block;
+      font-size: 11px; font-weight: 500;
+      color: var(--text-mid);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 7px;
+    }
+
+    .bmi-input-row {
+      display: flex; align-items: stretch;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--off-white);
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .bmi-input-row:focus-within {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(0,168,150,0.1);
+    }
+
+    .bmi-input-row input {
+      flex: 1; border: none; outline: none;
+      padding: 12px 16px;
+      font-family: var(--font-sans);
+      font-size: 17px; font-weight: 500;
+      color: var(--text-dark);
+      background: transparent;
+    }
+
+    .bmi-unit-badge {
+      padding: 0 14px;
+      font-size: 13px; font-weight: 500;
+      color: var(--text-muted);
+      background: var(--border);
+      display: flex; align-items: center;
+    }
+
+    .bmi-calc-btn {
+      width: 100%;
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+      background: var(--blue-dark);
+      color: var(--white);
+      border: none; border-radius: var(--radius);
+      padding: 14px 24px;
+      font-family: var(--font-sans);
+      font-size: 15px; font-weight: 500;
+      cursor: pointer; margin-top: 6px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .bmi-calc-btn:hover { background: var(--blue-hover); transform: translateY(-1px); }
+    .bmi-calc-btn svg { width: 17px; height: 17px; stroke: white; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* BMI Result box */
+    .bmi-result-box {
+      display: none;
+      background: var(--blue-dark);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-top: 24px;
+      flex-direction: column; gap: 18px;
+      animation: fadeUp 0.3s ease both;
+    }
+
+    .bmi-result-box.visible { display: flex; }
+
+    .bmi-score-row { display: flex; align-items: flex-end; gap: 10px; }
+
+    .bmi-score-number {
+      font-family: var(--font-serif);
+      font-size: 58px; font-weight: 600;
+      color: var(--white); line-height: 1;
+    }
+
+    .bmi-score-unit {
+      font-size: 12px; color: rgba(255,255,255,0.4);
+      padding-bottom: 9px; letter-spacing: 0.04em;
+    }
+
+    .bmi-status-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 7px 16px; border-radius: 100px;
+      font-size: 13px; font-weight: 500; width: fit-content;
+    }
+
+    .bmi-status-badge::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+    }
+
+    .bmi-status--underweight { background: rgba(59,130,246,0.18); color: #93c5fd; }
+    .bmi-status--underweight::before { background: #60a5fa; }
+    .bmi-status--normal { background: rgba(0,168,150,0.18); color: #6ee7c0; }
+    .bmi-status--normal::before { background: var(--teal); }
+    .bmi-status--overweight { background: rgba(200,146,58,0.2); color: #fcd385; }
+    .bmi-status--overweight::before { background: var(--gold); }
+    .bmi-status--obese { background: rgba(239,68,68,0.18); color: #fca5a5; }
+    .bmi-status--obese::before { background: #f87171; }
+
+    .bmi-scale { background: rgba(255,255,255,0.07); border-radius: 8px; padding: 14px 16px; }
+
+    .bmi-scale-label {
+      font-size: 10px; color: rgba(255,255,255,0.4);
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 9px;
+    }
+
+    .bmi-bar-track {
+      height: 7px; border-radius: 100px;
+      background: linear-gradient(to right, #60a5fa 0%, #00a896 25%, var(--gold) 65%, #f87171 100%);
+      position: relative; margin-bottom: 7px;
+    }
+
+    .bmi-bar-marker {
+      position: absolute; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 15px; height: 15px;
+      background: var(--white); border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+      transition: left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .bmi-bar-ticks {
+      display: flex; justify-content: space-between;
+      font-size: 10px; color: rgba(255,255,255,0.35);
+    }
+
+    .bmi-tip {
+      background: rgba(255,255,255,0.05);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 13px 15px;
+      font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.65;
+    }
+
+    /* ══════════════════════════════════════════
+       FIRST AID SIDEBAR CONTENT
+    ══════════════════════════════════════════ */
+    .fa-intro {
+      font-size: 14px; color: var(--text-muted); line-height: 1.7;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Scenario buttons grid */
+    .fa-btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .fa-scn-btn {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      background: var(--off-white);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 12px;
+      cursor: pointer; font-family: var(--font-sans);
+      transition: all 0.2s;
+      position: relative; overflow: hidden;
+    }
+
+    .fa-scn-btn::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 3px;
+      background: var(--teal);
+      transform: scaleX(0); transition: transform 0.2s;
+    }
+
+    .fa-scn-btn:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .fa-scn-btn:hover::after { transform: scaleX(1); }
+
+    .fa-scn-btn.active {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .fa-scn-btn.active::after { transform: scaleX(1); }
+
+    .fa-scn-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: var(--sky);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .fa-scn-icon svg { width: 22px; height: 22px; stroke: var(--blue-mid); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.2s; }
+
+    .fa-scn-btn.active .fa-scn-icon { background: rgba(0,168,150,0.15); }
+    .fa-scn-btn.active .fa-scn-icon svg { stroke: var(--teal); }
+
+    .fa-scn-label { font-size: 13px; font-weight: 500; color: var(--text-mid); transition: color 0.2s; }
+    .fa-scn-btn.active .fa-scn-label { color: var(--white); }
+
+    /* Content panel */
+    .fa-panel { display: none; animation: fadeUp 0.28s ease both; }
+    .fa-panel.active { display: block; }
+
+    .fa-panel-header {
+      background: var(--blue-dark);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      padding: 20px 22px;
+      display: flex; align-items: center; gap: 14px;
+    }
+
+    .fa-panel-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(0,168,150,0.15);
+      border: 1px solid rgba(0,168,150,0.3);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .fa-panel-icon svg { width: 22px; height: 22px; stroke: var(--teal); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    .fa-panel-header h3 { font-family: var(--font-serif); font-size: 20px; color: var(--white); margin-bottom: 1px; }
+    .fa-panel-header p { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+    .fa-steps-wrap {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      padding: 0 22px;
+    }
+
+    .fa-step {
+      display: flex; gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fa-step:last-of-type { border-bottom: none; }
+
+    .fa-step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--sky);
+      border: 1.5px solid var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif); font-size: 14px; font-weight: 600;
+      color: var(--blue-dark); flex-shrink: 0; margin-top: 2px;
+    }
+
+    .fa-step-text { font-size: 14px; color: var(--text-dark); line-height: 1.65; padding-top: 3px; }
+    .fa-step-text strong { color: var(--blue-dark); font-weight: 500; }
+
+    .fa-emergency-badge {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: #fff8ed;
+      border: 1.5px solid var(--gold);
+      border-radius: var(--radius-lg);
+      padding: 16px 18px; margin-top: 16px;
+    }
+
+    .fa-emergency-badge-icon { font-size: 20px; flex-shrink: 0; line-height: 1.4; }
+
+    .fa-emergency-badge-text { font-size: 13px; font-weight: 500; color: #7a4a10; line-height: 1.55; }
+    .fa-emergency-badge-text strong { display: block; font-size: 14px; color: #5a3208; margin-bottom: 2px; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(160deg, rgba(0,51,102,0.92) 0%, rgba(0,64,128,0.75) 60%, rgba(0,51,102,0.4) 100%),
+        url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1600&q=80') center/cover no-repeat;
+      display: flex; align-items: center;
+      padding: 100px 5% 60px;
+    }
+
+    .hero-content { max-width: 640px; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,168,150,0.15);
+      border: 1px solid rgba(0,168,150,0.4);
+      color: var(--teal);
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--teal); border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 6vw, 72px); font-weight: 600;
+      color: var(--white); line-height: 1.1; margin-bottom: 20px;
+    }
+
+    .hero h1 em { color: var(--teal); font-style: italic; }
+
+    .hero p {
+      font-size: 17px; color: rgba(255,255,255,0.8);
+      max-width: 500px; margin-bottom: 36px; font-weight: 300;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal); color: var(--blue-dark);
+      text-decoration: none; font-weight: 500; font-size: 15px;
+      padding: 14px 28px; border-radius: 100px;
+      transition: transform 0.15s, opacity 0.15s;
+    }
+
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: white; text-decoration: none;
+      font-weight: 400; font-size: 15px; padding: 14px 28px;
+      border-radius: 100px; border: 1px solid rgba(255,255,255,0.4);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.06); }
+
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 56px; padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .stat-item { text-align: left; }
+
+    .stat-number {
+      font-family: var(--font-serif); font-size: 34px; font-weight: 600;
+      color: var(--white); line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px; color: rgba(255,255,255,0.55);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 88px 5%; }
+
+    .section-label {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 4vw, 44px); font-weight: 600;
+      color: var(--text-dark); line-height: 1.2; max-width: 540px;
+    }
+
+    .section-title em { color: var(--teal); font-style: italic; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px; margin-top: 48px;
+    }
+
+    .service-card {
+      background: var(--off-white); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      transition: box-shadow 0.2s, transform 0.2s; cursor: default;
+    }
+
+    .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+
+    .service-icon {
+      width: 48px; height: 48px; background: var(--sky);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .service-icon svg { width: 26px; height: 26px; stroke: var(--blue-mid); }
+
+    .service-card h3 {
+      font-family: var(--font-serif); font-size: 20px; font-weight: 600;
+      color: var(--blue-dark); margin-bottom: 8px;
+    }
+
+    .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ── WHY US ── */
+    #why { background: var(--blue-dark); }
+    #why .section-label { color: var(--teal); }
+    #why .section-title { color: var(--white); }
+
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; align-items: center; }
+    .why-points { display: flex; flex-direction: column; gap: 28px; }
+    .why-point { display: flex; gap: 18px; align-items: flex-start; }
+
+    .why-point-num {
+      font-family: var(--font-serif); font-size: 36px; font-weight: 600;
+      color: rgba(0,168,150,0.3); line-height: 1; min-width: 36px;
+    }
+
+    .why-point h4 { font-family: var(--font-serif); font-size: 20px; color: var(--white); margin-bottom: 4px; }
+    .why-point p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    .why-visual { background: var(--blue-hover); border-radius: var(--radius-lg); padding: 36px; display: flex; flex-direction: column; gap: 16px; }
+
+    .why-card-item {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px; padding: 16px 20px;
+      display: flex; align-items: center; gap: 14px;
+    }
+
+    .why-card-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+    .why-card-item span { color: rgba(255,255,255,0.8); font-size: 14px; }
+
+    /* ── APPOINTMENT ── */
+    #appointment { background: var(--off-white); }
+
+    .appointment-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 48px; align-items: start; }
+
+    .appt-info h3 { font-family: var(--font-serif); font-size: 26px; color: var(--blue-dark); margin-bottom: 12px; }
+    .appt-info p { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; }
+
+    .contact-line { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+
+    .contact-line-icon {
+      width: 38px; height: 38px; background: var(--sky);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .contact-line-icon svg { width: 18px; height: 18px; stroke: var(--blue-mid); }
+
+    .contact-line-text strong { display: block; font-size: 13px; color: var(--text-muted); font-weight: 400; }
+
+    .contact-line-text a, .contact-line-text span {
+      font-size: 15px; color: var(--text-dark); text-decoration: none; font-weight: 500;
+    }
+
+    .contact-line-text a:hover { color: var(--teal); }
+
+    .appt-form {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow);
+    }
+
+    .appt-form h3 { font-family: var(--font-serif); font-size: 24px; color: var(--blue-dark); margin-bottom: 6px; }
+    .appt-form p { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { margin-bottom: 14px; }
+
+    .form-group label {
+      display: block; font-size: 12px; font-weight: 500;
+      color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 10px 14px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      font-family: var(--font-sans); font-size: 15px; color: var(--text-dark);
+      background: var(--off-white); outline: none; transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--teal); background: var(--white);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 80px; }
+
+    .whatsapp-btn {
+      width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: #25D366; color: white; border: none; border-radius: 100px;
+      padding: 14px; font-family: var(--font-sans); font-size: 15px; font-weight: 500;
+      cursor: pointer; transition: opacity 0.15s, transform 0.15s; margin-top: 8px; text-decoration: none;
+    }
+
+    .whatsapp-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .whatsapp-btn svg { width: 20px; height: 20px; fill: white; }
+
+    .form-note { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+
+    /* ── TEAM ── */
+    #team { background: var(--white); }
+
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 48px; }
+    .team-card { text-align: center; }
+
+    .team-avatar {
+      width: 100px; height: 100px; border-radius: 50%;
+      background: var(--sky); border: 3px solid var(--teal);
+      margin: 0 auto 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif); font-size: 28px; color: var(--blue-dark); font-weight: 600;
+    }
+
+    .team-card h4 { font-family: var(--font-serif); font-size: 18px; color: var(--blue-dark); margin-bottom: 3px; }
+    .team-card p { font-size: 13px; color: var(--text-muted); }
+
+    .team-card .team-dept {
+      display: inline-block; margin-top: 8px;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      background: var(--sky); color: var(--blue-mid);
+      padding: 4px 10px; border-radius: 100px;
+    }
+
+    /* ── FOOTER ── */
+    footer { background: var(--blue-dark); color: rgba(255,255,255,0.65); padding: 56px 5% 28px; }
+
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px; padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px;
+    }
+
+    .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 300px; margin-top: 12px; }
+
+    .footer-col h5 {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      display: block; color: rgba(255,255,255,0.6); text-decoration: none;
+      font-size: 14px; margin-bottom: 8px; transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--white); }
+
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 56px; height: 56px; background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      z-index: 200; text-decoration: none; transition: transform 0.2s;
+    }
+
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge { animation: fadeUp 0.5s ease both; }
+    .hero h1    { animation: fadeUp 0.6s 0.1s ease both; }
+    .hero p     { animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-actions { animation: fadeUp 0.6s 0.3s ease both; }
+    .hero-stats { animation: fadeUp 0.6s 0.4s ease both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .why-grid, .appointment-wrap { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .hero-stats { gap: 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      :root { --sidebar-w: 100vw; }
+      .sidebar { border-radius: 0; }
+    }
+
+    /* ── SMG DESIGNS ATTRIBUTION ── */
+    .footer-attribution {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.22);
+      transition: color 0.3s;
+    }
+
+    .footer-attribution:hover { color: rgba(255,255,255,0.45); }
+
+    .smg-mark {
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: rgba(0,168,150,0.45);
+      transition: color 0.3s;
+    }
+
+    .footer-attribution:hover .smg-mark { color: var(--teal); }
+
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     OVERLAY
+══════════════════════════════════════════ -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeAllSidebars()"></div>
+
+<!-- ══════════════════════════════════════════
+     BMI SIDEBAR
+══════════════════════════════════════════ -->
+<div class="sidebar" id="bmiSidebar" role="dialog" aria-label="BMI Calculator">
+
+  <div class="sidebar-header">
+    <div class="sidebar-header-left">
+      <div class="sidebar-header-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div>
+        <div class="sidebar-header-title">BMI Calculator</div>
+        <div class="sidebar-header-subtitle">Interactive Health Suite</div>
+      </div>
+    </div>
+    <button class="sidebar-close-btn" onclick="closeSidebar('bmiSidebar')" aria-label="Close">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="sidebar-body">
+    <p class="bmi-intro">Enter your weight and height to instantly calculate your Body Mass Index and receive a colour-coded health status with a personalised tip from our team.</p>
+
+    <div class="bmi-input-group">
+      <label>Weight</label>
+      <div class="bmi-input-row">
+        <input type="number" id="bmi-weight" placeholder="e.g. 70" min="1" max="300" />
+        <span class="bmi-unit-badge">kg</span>
+      </div>
+    </div>
+
+    <div class="bmi-input-group">
+      <label>Height</label>
+      <div class="bmi-input-row">
+        <input type="number" id="bmi-height" placeholder="e.g. 170" min="50" max="250" />
+        <span class="bmi-unit-badge">cm</span>
+      </div>
+    </div>
+
+    <button class="bmi-calc-btn" onclick="calculateBMI()">
+      <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Calculate BMI
+    </button>
+
+    <!-- Result box (hidden until calculated) -->
+    <div class="bmi-result-box" id="bmi-result-box">
+      <div class="bmi-score-row">
+        <div class="bmi-score-number" id="bmi-value">—</div>
+        <div class="bmi-score-unit">BMI</div>
+      </div>
+      <div class="bmi-status-badge" id="bmi-status-badge"></div>
+      <div class="bmi-scale">
+        <div class="bmi-scale-label">Your position on the scale</div>
+        <div class="bmi-bar-track">
+          <div class="bmi-bar-marker" id="bmi-marker" style="left:0%"></div>
+        </div>
+        <div class="bmi-bar-ticks">
+          <span>15</span><span>18.5</span><span>25</span><span>30</span><span>40</span>
+        </div>
+      </div>
+      <div class="bmi-tip" id="bmi-tip"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     FIRST AID SIDEBAR
+══════════════════════════════════════════ -->
+<div class="sidebar" id="firstAidSidebar" role="dialog" aria-label="First Aid Navigator">
+
+  <div class="sidebar-header">
+    <div class="sidebar-header-left">
+      <div class="sidebar-header-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <div class="sidebar-header-title">First Aid Guide</div>
+        <div class="sidebar-header-subtitle">Symptom &amp; Emergency Navigator</div>
+      </div>
+    </div>
+    <button class="sidebar-close-btn" onclick="closeSidebar('firstAidSidebar')" aria-label="Close">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="sidebar-body">
+    <p class="fa-intro">Select an emergency scenario below for instant step-by-step first aid guidance. This is not a substitute for professional medical care — always seek help immediately.</p>
+
+    <!-- Scenario selector buttons -->
+    <div class="fa-btn-grid">
+
+      <button class="fa-scn-btn active" onclick="openFaPanel(this,'fa-panel-poisoning')">
+        <div class="fa-scn-icon">
+          <svg viewBox="0 0 24 24"><path d="M10 2h4"/><path d="M12 14v-4"/><path d="M5.52 8H18.48a2 2 0 0 1 1.94 1.51l1.5 6A2 2 0 0 1 20 18H4a2 2 0 0 1-1.94-2.49l1.5-6A2 2 0 0 1 5.52 8z"/><circle cx="12" cy="18" r="1"/></svg>
+        </div>
+        <span class="fa-scn-label">Poisoning</span>
+      </button>
+
+      <button class="fa-scn-btn" onclick="openFaPanel(this,'fa-panel-choking')">
+        <div class="fa-scn-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+        </div>
+        <span class="fa-scn-label">Choking</span>
+      </button>
+
+      <button class="fa-scn-btn" onclick="openFaPanel(this,'fa-panel-heart')">
+        <div class="fa-scn-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <span class="fa-scn-label">Heart Attack</span>
+      </button>
+
+      <button class="fa-scn-btn" onclick="openFaPanel(this,'fa-panel-seizure')">
+        <div class="fa-scn-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <span class="fa-scn-label">Seizures</span>
+      </button>
+
+    </div>
+
+    <!-- ── POISONING PANEL ── -->
+    <div class="fa-panel active" id="fa-panel-poisoning">
+      <div class="fa-panel-header">
+        <div class="fa-panel-icon">
+          <svg viewBox="0 0 24 24"><path d="M10 2h4"/><path d="M12 14v-4"/><path d="M5.52 8H18.48a2 2 0 0 1 1.94 1.51l1.5 6A2 2 0 0 1 20 18H4a2 2 0 0 1-1.94-2.49l1.5-6A2 2 0 0 1 5.52 8z"/><circle cx="12" cy="18" r="1"/></svg>
+        </div>
+        <div>
+          <h3>Poisoning</h3>
+          <p>Ingested, inhaled, or skin/eye contact</p>
+        </div>
+      </div>
+      <div class="fa-steps-wrap">
+        <div class="fa-step">
+          <div class="fa-step-num">1</div>
+          <div class="fa-step-text"><strong>Identify the substance</strong> if it is safe to do so. Check for packaging or labels nearby and keep them — they are critical for the medical team.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">2</div>
+          <div class="fa-step-text"><strong>Do not induce vomiting</strong> unless specifically instructed by a medical professional. It can cause further harm with certain substances.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">3</div>
+          <div class="fa-step-text"><strong>For skin or eye contact:</strong> flush the area immediately with large amounts of clean running water for at least 15–20 minutes. Remove contaminated clothing carefully.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">4</div>
+          <div class="fa-step-text"><strong>If unconscious or struggling to breathe,</strong> place the person on their side (recovery position) to keep the airway clear. Monitor breathing constantly.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">5</div>
+          <div class="fa-step-text"><strong>Rush to our facility immediately</strong> and bring the substance or its container with you so our doctors can act without delay.</div>
+        </div>
+      </div>
+      <div class="fa-emergency-badge">
+        <div class="fa-emergency-badge-icon">⚠️</div>
+        <div class="fa-emergency-badge-text">
+          <strong>Call our Emergency Desk immediately</strong>
+          Do not wait for symptoms to worsen. Rush to our facility right now — every minute counts with poisoning.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CHOKING PANEL ── -->
+    <div class="fa-panel" id="fa-panel-choking">
+      <div class="fa-panel-header">
+        <div class="fa-panel-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+        </div>
+        <div>
+          <h3>Choking</h3>
+          <p>Airway obstruction — partial or complete</p>
+        </div>
+      </div>
+      <div class="fa-steps-wrap">
+        <div class="fa-step">
+          <div class="fa-step-num">1</div>
+          <div class="fa-step-text"><strong>Assess severity.</strong> If the person can speak, cough, or breathe, encourage them to keep coughing. Do not intervene — their own cough is most effective.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">2</div>
+          <div class="fa-step-text"><strong>If they cannot speak or breathe,</strong> stand behind them, place one foot forward for stability, and make a fist just above the navel and below the breastbone.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">3</div>
+          <div class="fa-step-text"><strong>Perform abdominal thrusts</strong> (Heimlich manoeuvre): sharp upward inward thrusts up to 5 times. Check if the airway has cleared after each set.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">4</div>
+          <div class="fa-step-text"><strong>For infants under 1 year:</strong> hold face-down on your forearm, give up to 5 firm back blows between shoulder blades. Turn face-up and give up to 5 chest thrusts using two fingers on the centre of the chest.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">5</div>
+          <div class="fa-step-text"><strong>If the person loses consciousness,</strong> lower them gently, begin CPR if trained, and look for a visible obstruction before giving rescue breaths. Never do blind finger sweeps.</div>
+        </div>
+      </div>
+      <div class="fa-emergency-badge">
+        <div class="fa-emergency-badge-icon">⚠️</div>
+        <div class="fa-emergency-badge-text">
+          <strong>Call our Emergency Desk immediately</strong>
+          Rush to our facility right now — even if the obstruction clears, the person must be examined by a doctor.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── HEART ATTACK PANEL ── -->
+    <div class="fa-panel" id="fa-panel-heart">
+      <div class="fa-panel-header">
+        <div class="fa-panel-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div>
+          <h3>Heart Attack</h3>
+          <p>Sudden chest pain or cardiac emergency</p>
+        </div>
+      </div>
+      <div class="fa-steps-wrap">
+        <div class="fa-step">
+          <div class="fa-step-num">1</div>
+          <div class="fa-step-text"><strong>Sit the person down</strong> comfortably — on the floor with their back against a wall and knees bent is ideal. Keep them as calm as possible to reduce strain on the heart.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">2</div>
+          <div class="fa-step-text"><strong>Loosen tight clothing</strong> around the neck, chest, and waist — collars, ties, and belts. This allows easier breathing and reduces physical strain.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">3</div>
+          <div class="fa-step-text"><strong>If conscious,</strong> ask whether they have been prescribed heart medication (aspirin or a nitrate spray). Help them take it if they are able to swallow and have it on them.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">4</div>
+          <div class="fa-step-text"><strong>Do not leave them alone.</strong> Reassure them, monitor their condition, and note the time symptoms began — this is critical information for our doctors.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">5</div>
+          <div class="fa-step-text"><strong>If they lose consciousness</strong> and stop breathing normally, begin CPR immediately if trained: 30 chest compressions, then 2 rescue breaths. Continue until help arrives.</div>
+        </div>
+      </div>
+      <div class="fa-emergency-badge">
+        <div class="fa-emergency-badge-icon">⚠️</div>
+        <div class="fa-emergency-badge-text">
+          <strong>Call our Emergency Desk immediately</strong>
+          Rush to our facility right now — a heart attack is life-threatening and requires urgent medical treatment.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SEIZURES PANEL ── -->
+    <div class="fa-panel" id="fa-panel-seizure">
+      <div class="fa-panel-header">
+        <div class="fa-panel-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div>
+          <h3>Seizures</h3>
+          <p>Convulsions — uncontrolled brain electrical activity</p>
+        </div>
+      </div>
+      <div class="fa-steps-wrap">
+        <div class="fa-step">
+          <div class="fa-step-num">1</div>
+          <div class="fa-step-text"><strong>Stay calm and note the time.</strong> If the seizure lasts more than 5 minutes or the person does not regain consciousness after it ends, this is a medical emergency.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">2</div>
+          <div class="fa-step-text"><strong>Ease them to the ground gently</strong> and clear the area of hard, sharp, or dangerous objects that could cause injury during the convulsions.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">3</div>
+          <div class="fa-step-text"><strong>Turn them onto their side</strong> (recovery position) to keep the airway clear and prevent choking. Cushion their head with something soft.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">4</div>
+          <div class="fa-step-text"><strong>Do NOT put anything in their mouth</strong> and do NOT hold them down. Both are dangerous myths — restraining them can cause serious injury to both of you.</div>
+        </div>
+        <div class="fa-step">
+          <div class="fa-step-num">5</div>
+          <div class="fa-step-text"><strong>After the seizure,</strong> speak calmly and reassure them. They will be confused and tired. Do not offer water or food until they are fully alert and conscious.</div>
+        </div>
+      </div>
+      <div class="fa-emergency-badge">
+        <div class="fa-emergency-badge-icon">⚠️</div>
+        <div class="fa-emergency-badge-text">
+          <strong>Call our Emergency Desk immediately</strong>
+          Rush to our facility right now — especially for a first seizure, a seizure over 5 minutes, or if the person is injured.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sidebar-body -->
+</div><!-- /firstAidSidebar -->
+
+<!-- ══════════════════════════════════════════
+     WHATSAPP FLOAT
+══════════════════════════════════════════ -->
+<a href="https://wa.me/254700000000?text=Hello%20Port%20Bell%20Medical%20Center%2C%20I%20would%20like%20to%20book%20an%20appointment." class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ══════════════════════════════════════════
+     NAV
+══════════════════════════════════════════ -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+    </div>
+    <span class="nav-logo-text"><span style="color:var(--teal)">Port Bell</span> Medical Center</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">About Us</a></li>
+    <li><a href="#team">Our Team</a></li>
+    <li>
+      <a href="#" class="nav-sidebar-trigger" onclick="openSidebar(event,'bmiSidebar')">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        BMI Calculator
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-sidebar-trigger" onclick="openSidebar(event,'firstAidSidebar')">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        First Aid
+      </a>
+    </li>
+    <li><a href="#appointment" class="nav-cta">Book Appointment</a></li>
+  </ul>
+
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#why" onclick="toggleMenu()">About Us</a>
+  <a href="#team" onclick="toggleMenu()">Our Team</a>
+  <a href="#" class="mob-feature-link" onclick="toggleMenu(); openSidebar(event,'bmiSidebar')">
+    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    BMI Calculator
+  </a>
+  <a href="#" class="mob-feature-link" onclick="toggleMenu(); openSidebar(event,'firstAidSidebar')">
+    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    First Aid Guide
+  </a>
+  <a href="#appointment" onclick="toggleMenu()">Book Appointment</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">Port Bell's Premier Medical Center</div>
+    <h1>Exceptional Care,<br><em>Close to Home</em></h1>
+    <p>Port Bell Medical Center delivers comprehensive clinical, diagnostic, emergency, and inpatient/outpatient services — premium neighborhood healthcare with a personal touch.</p>
+    <div class="hero-actions">
+      <a href="#appointment" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Appointment
+      </a>
+      <a href="#services" class="btn-outline">Explore Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">Years serving</div></div>
+      <div class="stat-item"><div class="stat-number">15,000+</div><div class="stat-label">Patients served</div></div>
+      <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Emergency care</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label">What We Offer</div>
+  <div class="section-title">Comprehensive <em>medical services</em> under one roof</div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <h3>General Consultations</h3>
+      <p>Expert outpatient consultations for acute and chronic conditions — professional diagnosis and treatment for every age group.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
+      <h3>Laboratory &amp; Diagnostics</h3>
+      <p>Full-service laboratory offering blood panels, urinalysis, imaging, ECG, and rapid diagnostic tests with fast turnaround.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>
+      <h3>Specialized Family Medicine</h3>
+      <p>Holistic, continuous care for families — paediatrics, women's health, chronic disease management, and preventive screenings.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg></div>
+      <h3>Pharmacy Services</h3>
+      <p>On-site, fully stocked pharmacy dispensing quality medications under licensed supervision — prescription and OTC products available.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3>24/7 Emergency Response</h3>
+      <p>Round-the-clock emergency unit with trained staff, emergency equipment, and rapid triage — ready every hour of every day.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <h3>Inpatient &amp; Outpatient Care</h3>
+      <p>Comfortable, monitored inpatient wards and efficient outpatient pathways — seamless transitions from diagnosis to recovery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-label">Why Choose Us</div>
+  <div class="section-title" style="color:white;">Care you can <em>trust</em>,<br>close to home</div>
+  <div class="why-grid">
+    <div class="why-points">
+      <div class="why-point"><div class="why-point-num">01</div><div><h4>Qualified Medical Team</h4><p>Our doctors and nurses are trained, registered professionals committed to evidence-based care.</p></div></div>
+      <div class="why-point"><div class="why-point-num">02</div><div><h4>Affordable Rates</h4><p>We accept SHA and major insurance covers — premium quality healthcare that remains accessible to every family in Kirinyaga.</p></div></div>
+      <div class="why-point"><div class="why-point-num">03</div><div><h4>Fast, Respectful Service</h4><p>We value your time. Minimal waiting, clear communication, and dignified treatment always.</p></div></div>
+      <div class="why-point"><div class="why-point-num">04</div><div><h4>Community-First Approach</h4><p>Deeply rooted in Kianyaga, Kirinyaga County, we understand our community's health needs and deliver care with warmth and dignity.</p></div></div>
+    </div>
+    <div class="why-visual">
+      <div class="why-card-item"><div class="why-card-dot"></div><span>SHA Accredited Facility</span></div>
+      <div class="why-card-item"><div class="why-card-dot"></div><span>Kenya Ministry of Health Certified</span></div>
+      <div class="why-card-item"><div class="why-card-dot"></div><span>24-Hour Emergency Response</span></div>
+      <div class="why-card-item"><div class="why-card-dot"></div><span>Modern Diagnostic Equipment</span></div>
+      <div class="why-card-item"><div class="why-card-dot"></div><span>Confidential Patient Records</span></div>
+      <div class="why-card-item"><div class="why-card-dot"></div><span>Friendly, English &amp; Swahili-Speaking Staff</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-label">Our Medical Team</div>
+  <div class="section-title">Experienced professionals <em>who care</em></div>
+  <div class="team-grid">
+    <div class="team-card"><div class="team-avatar">DM</div><h4>Dr. David Mwenda</h4><p>General Physician &amp; Medical Director</p><span class="team-dept">General Medicine</span></div>
+    <div class="team-card"><div class="team-avatar">CW</div><h4>Dr. Caroline Wangari</h4><p>Family Medicine Specialist</p><span class="team-dept">Family Medicine</span></div>
+    <div class="team-card"><div class="team-avatar">JK</div><h4>Nurse Joy Kimani</h4><p>Senior Registered Nurse</p><span class="team-dept">In-Patient Care</span></div>
+    <div class="team-card"><div class="team-avatar">PN</div><h4>Patrick Njoroge</h4><p>Laboratory Technologist</p><span class="team-dept">Diagnostics</span></div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+  <div class="section-label">Book an Appointment</div>
+  <div class="section-title">Ready to see a doctor? <em>Let's talk.</em></div>
+  <div class="appointment-wrap">
+    <div class="appt-info">
+      <h3>How it works</h3>
+      <p>Fill in the form — it sends directly to our WhatsApp. We'll confirm your appointment within a few minutes.</p>
+      <div class="contact-line">
+        <div class="contact-line-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.37 2 2 0 0 1 3.54 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="contact-line-text"><strong>Phone / WhatsApp</strong><a href="tel:+254700000000">+254 700 000 000</a></div>
+      </div>
+      <div class="contact-line">
+        <div class="contact-line-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="contact-line-text"><strong>Outpatient Hours</strong><span>Mon – Sat: 7 am – 8 pm</span></div>
+      </div>
+      <div class="contact-line">
+        <div class="contact-line-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="contact-line-text"><strong>Location</strong><span>Kianyaga Town, Kirinyaga County, Kenya</span></div>
+      </div>
+      <div class="contact-line" style="border:none;">
+        <div class="contact-line-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="contact-line-text"><strong>Emergency</strong><span>Available 24 hours a day</span></div>
+      </div>
+    </div>
+    <div class="appt-form">
+      <h3>Book via WhatsApp</h3>
+      <p>Fill in your details and we'll open a WhatsApp chat pre-filled for you.</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" id="fname" placeholder="Sarah" /></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="lname" placeholder="Kamau" /></div>
+      </div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="+254 7XX XXX XXX" /></div>
+      <div class="form-group">
+        <label>Department / Service</label>
+        <select id="dept">
+          <option value="">Select a service...</option>
+          <option>General Consultation</option>
+          <option>Laboratory &amp; Diagnostics</option>
+          <option>Specialized Family Medicine</option>
+          <option>Pharmacy Inquiry</option>
+          <option>Emergency / Urgent Care</option>
+          <option>Inpatient Admission</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Preferred Date</label><input type="date" id="apptdate" /></div>
+      <div class="form-group"><label>Brief Message (optional)</label><textarea id="message" placeholder="Describe your concern briefly..."></textarea></div>
+      <a href="#" class="whatsapp-btn" id="waBtn" onclick="sendToWhatsApp(event)">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Send Appointment Request on WhatsApp
+      </a>
+      <p class="form-note">Your message opens directly in WhatsApp — no account needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#home" class="nav-logo" style="margin-bottom:0;">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <span class="nav-logo-text"><span style="color:var(--teal)">Port Bell</span> Medical Center</span>
+      </a>
+      <p>Serving Port Bell and the greater Kianyaga community with comprehensive, premium clinical and diagnostic healthcare. Your wellbeing is our highest commitment.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a href="#services">General Consultations</a>
+      <a href="#services">Laboratory &amp; Diagnostics</a>
+      <a href="#services">Family Medicine</a>
+      <a href="#services">Pharmacy Services</a>
+      <a href="#services">24/7 Emergency</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="tel:+254700000000">+254 700 000 000</a>
+      <a href="https://wa.me/254700000000" target="_blank">WhatsApp Us</a>
+      <a href="#appointment">Book Appointment</a>
+      <a href="#">Kianyaga Town, Kirinyaga County</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Port Bell Medical Center. All rights reserved.</span>
+    <span class="footer-attribution">Designed &amp; Developed by <span class="smg-mark">SMG Designs</span></span>
+  </div>
+</footer>
+
+<script>
+  /* ─────────────────────────────────────────
+     SIDEBAR ENGINE
+  ───────────────────────────────────────── */
+  function openSidebar(e, id) {
+    if (e) e.preventDefault();
+    closeAllSidebars(false);                          // close any open one first
+    document.getElementById(id).classList.add('open');
+    document.getElementById('sidebarOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';          // prevent background scroll
+  }
+
+  function closeSidebar(id) {
+    document.getElementById(id).classList.remove('open');
+    document.getElementById('sidebarOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function closeAllSidebars(restoreScroll) {
+    document.querySelectorAll('.sidebar').forEach(function(s) { s.classList.remove('open'); });
+    document.getElementById('sidebarOverlay').classList.remove('active');
+    if (restoreScroll !== false) document.body.style.overflow = '';
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeAllSidebars();
+  });
+
+  /* ─────────────────────────────────────────
+     ORIGINAL FUNCTIONS (intact)
+  ───────────────────────────────────────── */
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+
+  function sendToWhatsApp(e) {
+    e.preventDefault();
+    const fname = document.getElementById('fname').value.trim();
+    const lname = document.getElementById('lname').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const dept  = document.getElementById('dept').value;
+    const date  = document.getElementById('apptdate').value;
+    const msg   = document.getElementById('message').value.trim();
+
+    const name = (fname + ' ' + lname).trim() || 'a patient';
+    let text = `Hello Port Bell Medical Center, I would like to book an appointment.\n\n`;
+    text += `*Name:* ${name}\n`;
+    if (phone) text += `*Phone:* ${phone}\n`;
+    if (dept)  text += `*Service:* ${dept}\n`;
+    if (date)  text += `*Preferred Date:* ${date}\n`;
+    if (msg)   text += `*Additional Info:* ${msg}\n`;
+    text += `\nKindly confirm my appointment. Thank you.`;
+
+    const waNumber = '254700000000'; // ← replace with actual Port Bell Medical Center number
+    window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
+  }
+
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', function(e) {
+    const nav       = document.getElementById('mobileNav');
+    const hamburger = document.querySelector('.hamburger');
+    if (nav && hamburger && !nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove('open');
+    }
+  });
+
+  /* ─────────────────────────────────────────
+     BMI CALCULATOR
+  ───────────────────────────────────────── */
+  function calculateBMI() {
+    const wEl = document.getElementById('bmi-weight');
+    const hEl = document.getElementById('bmi-height');
+    const w   = parseFloat(wEl.value);
+    const h   = parseFloat(hEl.value);
+
+    if (!w || !h || w <= 0 || h <= 0) { highlightErr(w <= 0 || !w ? wEl : hEl); return; }
+    if (w > 300 || h > 250 || h < 50) { highlightErr(h < 50 || h > 250 ? hEl : wEl); return; }
+
+    const hM  = h / 100;
+    const bmi = w / (hM * hM);
+    const bmiDisplay = (Math.round(bmi * 10) / 10).toFixed(1);
+
+    let category, cls, tip;
+    if      (bmi < 18.5) { category = 'Underweight'; cls = 'bmi-status--underweight'; tip = 'Your BMI suggests you may be underweight. Consider nutrient-rich meals and consult our nutrition team — being underweight can affect your energy and immune system.'; }
+    else if (bmi < 25)   { category = 'Normal Weight'; cls = 'bmi-status--normal'; tip = 'Excellent — your BMI is in the healthy range. Keep it up with a balanced diet, regular activity, and annual check-ups at our preventive health clinic.'; }
+    else if (bmi < 30)   { category = 'Overweight'; cls = 'bmi-status--overweight'; tip = 'Your BMI is slightly above healthy. Small changes like 30 minutes of walking daily and reducing processed foods can make a real difference. Our doctors can guide you.'; }
+    else                 { category = 'Obese'; cls = 'bmi-status--obese'; tip = 'Your BMI falls in the obese range, raising risks for diabetes and heart disease. We recommend a consultation with our team for a personalised health plan.'; }
+
+    document.getElementById('bmi-value').textContent = bmiDisplay;
+
+    const badge = document.getElementById('bmi-status-badge');
+    badge.textContent = category;
+    badge.className   = 'bmi-status-badge ' + cls;
+
+    document.getElementById('bmi-tip').textContent = tip;
+
+    const pct = Math.min(Math.max(((bmi - 15) / 25) * 100, 0), 100);
+    document.getElementById('bmi-marker').style.left = pct.toFixed(1) + '%';
+
+    const box = document.getElementById('bmi-result-box');
+    box.classList.add('visible');
+    // Scroll result into view inside sidebar
+    setTimeout(function() { box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 80);
+  }
+
+  function highlightErr(el) {
+    el.parentElement.style.borderColor = '#f87171';
+    el.focus();
+    setTimeout(function() { el.parentElement.style.borderColor = ''; }, 2000);
+  }
+
+  document.getElementById('bmi-weight').addEventListener('keydown', function(e) { if (e.key === 'Enter') calculateBMI(); });
+  document.getElementById('bmi-height').addEventListener('keydown', function(e) { if (e.key === 'Enter') calculateBMI(); });
+
+  /* ─────────────────────────────────────────
+     FIRST AID TAB NAVIGATOR
+  ───────────────────────────────────────── */
+  function openFaPanel(btn, panelId) {
+    // Deactivate all scenario buttons
+    btn.closest('.sidebar-body').querySelectorAll('.fa-scn-btn').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    // Hide all panels
+    btn.closest('.sidebar-body').querySelectorAll('.fa-panel').forEach(function(p) {
+      p.classList.remove('active');
+    });
+    // Activate selected
+    btn.classList.add('active');
+    document.getElementById(panelId).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
